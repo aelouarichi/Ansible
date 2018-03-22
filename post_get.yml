@@ -1,8 +1,9 @@
-- name: Parameter from service Now
+- name: Running API
   uri:
-    url: ""
+    url: https://api.github.com/users
     method: GET
-    resource_group: "{{ resourcegr }}"
-    name: "{{ nameVM }}"
-    force_basic_auth: yes
-    status_code: 201
+    return_content: yes
+  register: user_list
+
+- name: App Details
+  debug: var=user_list
