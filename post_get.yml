@@ -1,0 +1,8 @@
+- name: Parameter from service Now
+  uri:
+    url: ""
+    method: GET
+    resource_group: "{{ resourcegr }}"
+    name: "{{ nameVM }}"
+    force_basic_auth: yes
+    status_code: 201
