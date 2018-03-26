@@ -1,4 +1,4 @@
 ---
 - name: Extra variable test
     debug:
-     msg: "{{ my_var }}"
+     msg: "Test"
