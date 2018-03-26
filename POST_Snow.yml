@@ -1,5 +1,5 @@
 ---
-- hosts: 10.1.17.10
+- hosts: 10.1.17.12
   become: yes
   become_method: sudo
   vars:
