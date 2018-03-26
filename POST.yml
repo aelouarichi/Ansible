@@ -1,0 +1,9 @@
+---
+- uri:
+    url: https://your.form.based.auth.example.com/index.php
+    method: POST
+    body: "name=your_username&password=your_password&enter=Sign%20in"
+    status_code: 302
+    headers:
+      Content-Type: "application/x-www-form-urlencoded"
+  register: login
