@@ -1,5 +1,5 @@
 ---
-- hosts: 10.1.17.12
+- hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
   vars:
