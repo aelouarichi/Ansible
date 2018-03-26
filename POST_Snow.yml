@@ -9,7 +9,7 @@
   - name: POST
     uri:
       url: https://devoteamfrdev.service-now.com
-      method: POST
+      method: PUT
       body:
           extra_vars:
             VmName: "{{ vmname }}"
