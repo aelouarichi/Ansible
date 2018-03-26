@@ -8,7 +8,7 @@
   tasks:
   - name: POST
     uri:
-      url: http://vmlabsnowazurerh7.westeurope.cloudapp.azure.com/api/v1/job_templates/26
+      url: https://devoteamfrdev.service-now.com
       method: POST
       body:
           extra_vars:
