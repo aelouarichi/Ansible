@@ -2,6 +2,8 @@
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
+  vars:
+    vmname:myvmname
 
   tasks:
   - name: POST
@@ -10,7 +12,6 @@
       method: POST
       body:
           extra_vars:
-            Username: mytppuser
-            Password: Sup3rS3cr3t
+            VmName:"{{ vmname }}"
       status_code: 200
       body_format: json
