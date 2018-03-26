@@ -1,11 +1,10 @@
 ---
+- name: Azure Playbook
+  hosts: all
+  become: yes
+  become_method: sudo
 
-    - name: POST
-      uri:
-        url: "https://devoteamfrdev.service-now.com"
-        method: POST
-        body:
-            Username: test
-            Password: test
-        status_code: 200
-        body_format: json
+  tasks:
+  - name: Extra variable test
+    debug:
+     msg: "test"
