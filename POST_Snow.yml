@@ -6,7 +6,7 @@
 
   tasks:
   - name: Authenticate to TPP
- uri:
+  uri:
       url: https://devoteamfrdev.service-now.com
       method: POST
       body:
