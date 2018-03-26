@@ -9,7 +9,8 @@
       url: https://devoteamfrdev.service-now.com
       method: POST
       body:
-          Username: mytppuser
-          Password: Sup3rS3cr3t
+          extra_vars:
+            Username: mytppuser
+            Password: Sup3rS3cr3t
       status_code: 200
       body_format: json
