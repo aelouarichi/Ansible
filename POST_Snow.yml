@@ -1,6 +1,6 @@
 ---
 - name: Azure Playbook
-  hosts: all
+  hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
 
