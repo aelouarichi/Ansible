@@ -3,7 +3,7 @@
   become: yes
   become_method: sudo
   vars:
-    vmname:myvmname
+    vmname: myvmname
 
   tasks:
   - name: POST
@@ -12,6 +12,7 @@
       method: POST
       body:
           extra_vars:
-            VmName:"{{ vmname }}"
+            VmName: "{{ vmname }}"
       status_code: 200
       body_format: json
+
