@@ -22,4 +22,5 @@
       register: snow_response
     - debug: 
         var: snow_response
+        msg: "Test"
         
