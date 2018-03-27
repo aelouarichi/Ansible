@@ -1,15 +1,15 @@
 ---
 - name: ansible POST to Snow
-  hosts: vmlabsnowazuerh7
+  hosts: XXXXXXXXXX
   become: yes
   become_method: sudo
 
   tasks:
     - name: Posting to SNOW API
       uri:
-        url: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post 
-        user: "denis"
-        password: "denis"
+        url: XXXXXXXXXXXXXXXXXX 
+        user: "XXXXXXXXX"
+        password: "XXXXXXXXXXXXX"
         method: POST
         return_content: yes
         headers:
