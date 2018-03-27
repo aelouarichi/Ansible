@@ -21,4 +21,4 @@
         validate_certs: no
       register: snow_response
     - debug:
-        var: command_result
+        var: snow_response
