@@ -1,8 +1,8 @@
 ---
 - name: ansible POST to Snow
   hosts: vmlabsnowazuerh7
-    become: yes
-    become_method: sudo
+  become: yes
+  become_method: sudo
 
   tasks:
     - name: Posting to SNOW API
