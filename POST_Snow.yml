@@ -7,7 +7,7 @@
   tasks:
     - name: Posting to SNOW API
       uri:
-        url: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post 
+        url: https://devoteamfrdev.service-now.com//api/devo2/ansible_get 
         user: "denis"
         password: "denis"
         method: POST
