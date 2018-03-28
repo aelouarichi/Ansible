@@ -5,9 +5,9 @@
   tasks:
   - name: Create VM with defaults
     azure_rm_virtualmachine:
-      resource_group: myResourceGroup
+      resource_group: RG-GS
       name: myVM
-      vm_size: Standard_DS1_v2
+      vm_size: A0\Basic_A0
       admin_username: yaye
       admin_password: Devoteam18!
       image:
