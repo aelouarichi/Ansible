@@ -4,7 +4,7 @@
   become_method: sudo
   vars:
     RG: RG-GS
-    vm_name: Service Now2
+    vm_name: Service Now3
     size: A0\Basic_A0
     admin_uname: snow
     admin_passwd: snowDevoteam18!
@@ -24,7 +24,7 @@
         body_format: json
         body:
           {"Name":"{{ vm_name }}",
-           "OperatingSystem":"CentOS"
+           "OperatingSystem":"CentOS1"
           }
         #status_code: 201
         validate_certs: no
