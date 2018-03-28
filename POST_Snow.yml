@@ -10,7 +10,7 @@
       vm_size: Standard_DS1_v2
       admin_username: yaye
       admin_password: Devoteam18!
-      image:i
+      image:
         offer: CentOS
         publisher: OpenLogic
         sku: '7.1'
