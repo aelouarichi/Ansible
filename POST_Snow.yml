@@ -4,7 +4,7 @@
   become_method: sudo
   vars:
     RG: RG-GS
-    vm_name: Service Now
+    vm_name: Service Now2
     size: A0\Basic_A0
     admin_uname: snow
     admin_passwd: snowDevoteam18!
