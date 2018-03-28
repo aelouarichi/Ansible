@@ -3,7 +3,7 @@
   become: yes
   become_method: sudo
   vars:
-    RG: RG_snow
+    RG: RG-GS
     vm_name: Service Now
     size: A0\Basic_A0
     admin_uname: snow
@@ -24,24 +24,4 @@
         publisher: OpenLogic
         sku: '7.1'
         version: latest
-    - name: Posting to SNOW API
-      uri:
-        url: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post
-        user: "{{user_snow }}"
-        password: "{{user_snow }}"
-        method: POST
-        return_content: yes
-        headers:
-          Content-Type: application/json
-        body_format: json
-        body:
-          {"Manufacturer":"OpenLogic",
-           "Name":"{{ vm_name }}",
-           "Operating System":"CentOS"
-          }
-        #status_code: 201
-        validate_certs: no
-      register: snow_response
-    - debug:
-        var: snow_response
-
+   
