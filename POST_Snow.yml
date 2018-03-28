@@ -1,15 +1,15 @@
 ---
 - name: ansible POST to Snow
-  hosts: XXXXXXXXXX
+  hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
 
   tasks:
     - name: Posting to SNOW API
       uri:
-        url: XXXXXXXXXXXXXXXXXX 
-        user: "XXXXXXXXX"
-        password: "XXXXXXXXXXXXX"
+        url: url: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post 
+        user: "denis"
+        password: "denis"
         method: POST
         return_content: yes
         headers:
@@ -17,7 +17,7 @@
         body_format: json
         body:
           {"Name":"Ansible Tower"}
-        status_code: 201
+        #status_code: 201
         validate_certs: no
       register: snow_response
    # - debug: 
