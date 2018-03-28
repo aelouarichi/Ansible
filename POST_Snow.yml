@@ -2,24 +2,15 @@
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
-  vars:
-    RG: RG-GS
-    vm_name: Service Now
-    size: A0\Basic_A0
-    admin_uname: snow
-    admin_passwd: snowDevoteam18!
-    user_snow: denis
-    passwd_snow: denis
-
   tasks:
-    - name: Create VM
-      azure_rm_virtualmachine:
-      resource_group: "{{ RG }}"
-      name: "{{ vm_name }}"
-      vm_size: "{{ size }}"
-      admin_username: "{{ admin_uname }}"
-      admin_password: "{{ admin_passwd }}"
-      image:
+  - name: Create VM with defaults
+    azure_rm_virtualmachine:
+      resource_group: myResourceGroup
+      name: myVM
+      vm_size: Standard_DS1_v2
+      admin_username: yaye
+      admin_password: Devoteam18!
+      image:i
         offer: CentOS
         publisher: OpenLogic
         sku: '7.1'
