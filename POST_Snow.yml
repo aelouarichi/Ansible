@@ -20,7 +20,7 @@
         #status_code: 201
         validate_certs: no
       register: snow_response
-   # - debug: 
-    #    var: snow_response
+    - debug: 
+        var: snow_response
      #   msg: "Test"
         
