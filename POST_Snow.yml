@@ -23,9 +23,8 @@
           Content-Type: application/json
         body_format: json
         body:
-          {"Manufacturer":"OpenLogic",
-           "Name":"{{ vm_name }}",
-           "Operating System":"CentOS"
+          {"Name":"{{ vm_name }}",
+           "OperatingSystem":"CentOS"
           }
         #status_code: 201
         validate_certs: no
