@@ -3,7 +3,7 @@
   become: yes
   become_method: sudo
   vars:
-    RG: RG_snow
+    RG: RG-GS
     vm_name: Service Now
     size: A0\Basic_A0
     admin_uname: snow
