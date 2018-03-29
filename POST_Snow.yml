@@ -2,6 +2,8 @@
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
+  - set_fact:
+    ansible_winrm_server_cert_validation: ignore
 
   tasks:
     - name: GET
