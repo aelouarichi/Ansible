@@ -10,7 +10,7 @@
     admin_passwd: snowDevoteam18!
     user_snow: denis
     passwd_snow: denis
-    name_vm: "{{ foo }}"
+    name_vm: test
   tasks:
     - debug:
         msg: "{{ name_vm }}"
