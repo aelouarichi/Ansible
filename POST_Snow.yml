@@ -20,7 +20,7 @@
         return_content: yes
         headers:
           Content-Type: application/json
-        #status_code: 201
+        status_code: 201
         validate_certs: no
       register: snow_response
     - debug:
