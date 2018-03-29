@@ -13,7 +13,7 @@
     name_vm: '{{ foo }}'
   tasks:
     - name: Print 
-      debug: "msg='Mosh Version: {{ foo }}'"
+      debug: "msg='Mosh Version: {{ name_vm }}'"
      
     
     
