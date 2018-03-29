@@ -3,6 +3,7 @@
   become: yes
   become_method: sudo
   vars:
+    name_vm: '{{ foo }}'
     RG: myResourceGroup
     vm_name: TestOfficiel
     size: Standard_A1
@@ -10,10 +11,10 @@
     admin_passwd: snowDevoteam18!
     user_snow: denis
     passwd_snow: denis
-    #name_vm: '{{ foo }}'
+    
   tasks:
     - name: Print 
-      debug: msg="version - {{ extra_vars.foo }}"
+      debug: msg="version - '{{ foo }}'"
      
     
     
