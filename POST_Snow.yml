@@ -14,7 +14,7 @@
     - name: GET
       uri:
         url: http://vmlabsnowazurerh7.westeurope.cloudapp.azure.com/api/v1/job_templates/26/launch/
-        method: GET
+        method: POST
         user: "yfatou"
         password: "Devoteam2018!"
         force_basic_auth: yes
