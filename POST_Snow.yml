@@ -2,19 +2,3 @@
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
-
-  tasks:
-    - name: GET
-      uri:
-        url: http://vmlabsnowazurerh7.westeurope.cloudapp.azure.com/api/v1/job_templates/26/launch/
-        user: yfatou
-        password: Devoteam2018!
-        method: GET
-        return_content: yes
-        status_code: 200
-        validate_certs: false
-        body_format: json
-        register: sonar_web_api_status_output
-    - debug:
-        var: sonar_web_api_status_output
- 
