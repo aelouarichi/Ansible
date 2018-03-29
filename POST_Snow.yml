@@ -2,23 +2,35 @@
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
+  vars:
+    RG: myResourceGroup
+    vm_name: Service Now
+    size: Standard_A1
+    admin_uname: snow
+    admin_passwd: snowDevoteam18!
+    user_snow: denis
+    passwd_snow: denis
   tasks:
-    - name: GET
+    - name: Posting to SNOW API
       uri:
-        url: http://vmlabsnowazurerh7.westeurope.cloudapp.azure.com/api/v1/job_templates/26/launch/
-        user: "yfatou"
-        password: "Devoteam2018!"
-        method: GET
-        headers:
-           Authorization: "Token 16d3f50e7fda471a3d292486e5d3dd8f8e577a5b"
-           Content-Type: "application/json"
+        url: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post
+        user: "{{user_snow }}"
+        password: "{{user_snow }}"
+        method: POST
         return_content: yes
-        status_code: 200
-        validate_certs: false
+        headers:
+          Content-Type: application/json
         body_format: json
-        register: sonar_web_api_status_output
+        body:
+          {"Manufacturer":"OpenLogic",
+           "Name":"{{ vm_name }}",
+           "Operating System":"CentOS"
+          }
+        #status_code: 201
+        validate_certs: no
+      register: snow_response
     - debug:
-        var: sonar_web_api_status_output
+        var: snow_response
 
  
 
