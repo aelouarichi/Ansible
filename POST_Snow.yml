@@ -8,13 +8,11 @@
     size: Standard_A1
     admin_uname: snow
     admin_passwd: snowteam18!
-
-
+    
   tasks:
-
-- name: Create virtual network
-  azure_rm_virtualnetwork:
-    resource_group: "{{ RG }}"
-    name: testvn001
-    address_prefixes: "10.10.0.0/16
+    - name: Create virtual network
+      azure_rm_virtualnetwork:
+        resource_group: "{{ RG }}"
+        name: testvn001
+        address_prefixes: "10.10.0.0/16
 
