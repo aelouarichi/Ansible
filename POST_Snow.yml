@@ -12,8 +12,9 @@
     passwd_snow: denis
     name_vm: '{{ git_branch }}'
   tasks:
+    register: name_vm
     - debug:
-        msg: name_vm
+        var: name_vm
 
  
 
