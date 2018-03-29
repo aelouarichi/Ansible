@@ -25,9 +25,9 @@
         force_basic_auth: yes
         validate_certs: false
         body_format: json
-        register: sonar_web_api_status_output
+        register: test
     - debug:
-        var: sonar_web_api_status_output
+        var: test
 
  
 
