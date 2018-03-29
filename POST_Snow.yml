@@ -2,9 +2,19 @@
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
-  vars:
-    RG: RG-GS
-    vm_name: Service Now
-    size: Standard_A1
-    admin_uname: snow
-    admin_passwd: snowteam18!
+ 
+- name: GET
+      uri:
+        url: "URL"
+        method: GET
+        HEADER_Content-Type: "application/json"
+        champ1: "{{ rabbitmq_auth_user }}"
+        champ2: "{{ rabbitmq_auth_password }}"
+        force_basic_auth: yes
+        status_code: 200,404
+        timeout: 10
+      register: request_user
+
+  - name: debug
+     debug: 
+      var: request_user  
