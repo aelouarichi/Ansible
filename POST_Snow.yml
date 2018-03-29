@@ -11,21 +11,15 @@
     user_snow: denis
     passwd_snow: denis
   tasks:
-    - name: Posting to SNOW API
+    - name: Post
       uri:
-        url: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post
-        user: "{{user_snow }}"
-        password: "{{user_snow }}"
+        url: https://vmlabsnowazurerh7.westeurope.cloudapp.azure.com/api/v2/job_templates/26/launch/
+        user: "yfatou"
+        password: "Devoteam2018!"
         method: POST
         return_content: yes
         headers:
           Content-Type: application/json
-        body_format: json
-        body:
-          {"Manufacturer":"OpenLogic",
-           "Name":"{{ vm_name }}",
-           "Operating System":"CentOS"
-          }
         #status_code: 201
         validate_certs: no
       register: snow_response
