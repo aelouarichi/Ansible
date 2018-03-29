@@ -6,10 +6,10 @@
   tasks:
     - name: GET
       uri:
-        url: http://sonarhost:9000/sonar/api/system/status
+        url: https://vmlabsnowazurerh7.westeurope.cloudapp.azure.com/api/v1/job_templates/26/launch/
         method: GET
         return_content: yes
-        status_code: 200
+        status_code: 201
         body_format: json
         register: sonar_web_api_status_output
     - debug:
