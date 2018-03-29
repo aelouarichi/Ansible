@@ -20,6 +20,7 @@
         return_content: yes
         headers:
           Content-Type: application/json
+        body_format: json
         status_code: 201
         validate_certs: no
       register: snow_response
