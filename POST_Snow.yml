@@ -9,11 +9,10 @@
         url: http://vmlabsnowazurerh7.westeurope.cloudapp.azure.com/api/v1/job_templates/26/launch/
         method: GET
         return_content: yes
-        status_code: 201
+        status_code: 200
+        validate_certs: false
         body_format: json
         register: sonar_web_api_status_output
     - debug:
         var: sonar_web_api_status_output
-    - name: setting facts
-      set_fact:
-        ansible_winrm_server_cert_validation: ignore
+ 
