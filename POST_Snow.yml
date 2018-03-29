@@ -16,7 +16,7 @@
     - name: Create VM
       azure_rm_virtualmachine:
         resource_group: "{{ RG }}"
-        name: "{{ the_name_vm }}"
+        name: '{{ the_name_vm }}'
         vm_size: "{{ size }}"
         admin_username: "{{ admin_uname }}"
         admin_password: "{{ admin_passwd }}"
