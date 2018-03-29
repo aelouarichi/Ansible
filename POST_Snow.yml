@@ -6,17 +6,18 @@
   tasks
   
     - name: GET
-          uri:
-            url: "URL"
-            method: GET
-            HEADER_Content-Type: "application/json"
-            champ1: "{{ rabbitmq_auth_user }}"
-            champ2: "{{ rabbitmq_auth_password }}"
-            force_basic_auth: yes
-            status_code: 200,404
-            timeout: 10
-          register: request_user
+      uri:
+        url: http://sonarhost:9000/sonar/api/system/status
+        method: GET
+        return_content: yes
+        status_code: 200
+        body_format: json
+        register: sonar_web_api_status_output
+        
+      
+    - name: debug
+       debug: 
+         var: sonar_web_api_status_output  
 
-      - name: debug
-        debug: 
-          var: request_user  
+
+        
