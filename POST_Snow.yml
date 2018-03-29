@@ -14,7 +14,7 @@
     
   tasks:
     - debug:
-        var: name_vm
+        var: "{{ the_name_vm }}"
      
     
     
