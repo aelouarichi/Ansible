@@ -10,10 +10,10 @@
     admin_passwd: snowDevoteam18!
     user_snow: denis
     passwd_snow: denis
-    #name_vm: "{{ foo }}"
+    name_vm: "{{ git_branch }}"
   tasks:
     - debug:
-        msg: foo
+        msg: name_vm
 
  
 
