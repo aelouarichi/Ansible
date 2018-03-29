@@ -10,7 +10,7 @@
     admin_passwd: snowteam18!
 
 
-tasks:
+  tasks:
 
 - name: Create virtual network
   azure_rm_virtualnetwork:
