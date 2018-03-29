@@ -12,7 +12,7 @@
     passwd_snow: denis
     #name_vm: '{{ git_branch }}'
   tasks:
-    - debug: msg="{{ foo }}"
+    - debug: var=foo
     
     
     
