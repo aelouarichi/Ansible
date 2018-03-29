@@ -13,6 +13,11 @@
     #name_vm: '{{ git_branch }}'
   tasks:
     - debug: msg="{{ git_branch }}"
+    - debug: msg="{{ release_version }}"
+    
+    
+    
+    
 
  
 
