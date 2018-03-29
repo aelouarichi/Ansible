@@ -3,8 +3,7 @@
   become: yes
   become_method: sudo
 
-  tasks
-  
+  tasks:
     - name: GET
       uri:
         url: http://sonarhost:9000/sonar/api/system/status
