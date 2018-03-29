@@ -9,6 +9,9 @@
         user: "yfatou"
         password: "Devoteam2018!"
         method: GET
+        headers:
+           Authorization: "Token 16d3f50e7fda471a3d292486e5d3dd8f8e577a5b"
+           Content-Type: "application/json"
         return_content: yes
         status_code: 200
         validate_certs: false
