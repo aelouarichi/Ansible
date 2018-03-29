@@ -10,23 +10,22 @@
     admin_passwd: snowteam18!
 
 
-tasks:
+  tasks:
+    - name: Create virtual network
+      azure_rm_virtualnetwork:
+      resource_group: Testing
+      name: testvn001
+      address_prefixes: "10.10.0.0/16"
 
-- name: Create virtual network
-  azure_rm_virtualnetwork:
-    resource_group: Testing
-    name: testvn001
-    address_prefixes: "10.10.0.0/16"
-
-- name: Create virtual machine
-  azure_rm_virtualmachine:
-    resource_group: Testing
-    name: testvm001
-    vm_size: Standard_D1
-    admin_username: admin
-    admin_password: Password!
-    image:
-      offer: CentOS
-      publisher: OpenLogic
-      sku: '7.1'
-      version: latest
+    - name: Create virtual machine
+      azure_rm_virtualmachine:
+      resource_group: Testing
+      name: testvm001
+      vm_size: Standard_D1
+      admin_username: admin
+      admin_password: Password!
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.1'
+        version: latest
