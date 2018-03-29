@@ -12,8 +12,8 @@
     passwd_snow: denis
     name_vm: '{{ foo }}'
   tasks:
-    - debug:
-    msg: "System {{ name_vm }} "
+    - name: Print 
+      debug: "msg='Mosh Version: {{ foo }}'"
      
     
     
