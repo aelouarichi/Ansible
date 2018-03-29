@@ -12,11 +12,7 @@
         status_code: 200
         body_format: json
         register: sonar_web_api_status_output
-        
-      
-    - name: debug
-       debug: 
-         var: sonar_web_api_status_output  
-
+    - debug:
+        var: sonar_web_api_status_output
 
         
