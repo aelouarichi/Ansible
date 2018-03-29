@@ -25,7 +25,7 @@
         body_format: json
         body:
           {"Manufacturer":"OpenLogic",
-           "Name":"{{foo }}",
+           "Name":"{{ name }}",
            "Operating System":"CentOS"
           }
         #status_code: 201
