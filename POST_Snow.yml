@@ -15,4 +15,3 @@
         resource_group: "{{ RG }}"
         name: testvn001
         address_prefixes: "10.10.0.0/16
-
