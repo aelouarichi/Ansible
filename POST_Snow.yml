@@ -11,8 +11,10 @@
     user_snow: denis
     passwd_snow: denis
     name_vm: '{{ foo }}'
- # tasks:
-   # - debug: msg='{{ foo }}'
+  tasks:
+    - debug:
+    msg: "System {{ name_vm }} "
+     
     
     
     
