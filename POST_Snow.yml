@@ -14,7 +14,7 @@
     
   tasks:
     - debug:
-        var: {{ the_name_vm | from_json }}
+        var: {{ 'the_name_vm' | from_json }}
      
     
     
