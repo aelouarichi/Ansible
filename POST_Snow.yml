@@ -3,7 +3,7 @@
   become: yes
   become_method: sudo
   vars:
-    name_vm: "{{ name }}"
+    name_vm: "{{ the_name_vm }}"
     RG: myResourceGroup
     vm_name: TestOfficiel
     size: Standard_A1
