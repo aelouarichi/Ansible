@@ -14,7 +14,7 @@
     
   tasks:
     - name: Print 
-      debug: msg="version - '{{ foo }}'"
+      debug: msg="{{ foo }}"
      
     
     
