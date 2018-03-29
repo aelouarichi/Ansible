@@ -2,8 +2,6 @@
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
-  - set_fact:
-    ansible_winrm_server_cert_validation: ignore
 
   tasks:
     - name: GET
@@ -16,5 +14,6 @@
         register: sonar_web_api_status_output
     - debug:
         var: sonar_web_api_status_output
-
-        
+    - name: setting facts
+      set_fact:
+        ansible_winrm_server_cert_validation: ignore
