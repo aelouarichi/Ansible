@@ -18,16 +18,16 @@
   tasks:
     - name: Add tower Credential for Azure 
       tower_credential:
-      name: azure
-      kind: azure_rm
-      description: azure
-      organization: "Default"
-      state: present
-      client: " {{ azure_client_id }}"
-      subscription: " {{ azure_subscription }} "
-      tenant: " {{ azure_tenant }}"
-      secret: " {{ azure_secret }}"
-      tower_config_file: "~/.tower_cli.cfg"
+        name: azure
+        kind: azure_rm
+        description: azure
+        organization: "Default"
+        state: present
+        client: " {{ azure_client_id }}"
+        subscription: " {{ azure_subscription }} "
+        tenant: " {{ azure_tenant }}"
+        secret: " {{ azure_secret }}"
+        tower_config_file: "~/.tower_cli.cfg"
 
     - name: Create virtual network
       azure_rm_virtualnetwork:
