@@ -14,18 +14,6 @@
 
     - name: Create virtual network
       azure_rm_virtualnetwork:
-        resource_group: "{{ RG }}"
+        resource_group: RG-GS
         name: testvn001
         address_prefixes: "10.10.0.0/16"
-    - name: create virtual machine
-      azure_rm_virtualmachine:
-        resource_group: "{{ RG }}"
-        name: "{{ vm_name }}"
-        vm_size: "{{ size }}"
-        admin_username: "{{ admin_uname }}"
-        admin_password: "{{ admin_passwd }}"
-        image:
-          offer: CentOS
-          publisher: OpenLogic
-          sku: '7.1'
-          version: latest
