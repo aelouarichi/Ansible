@@ -15,17 +15,6 @@
 
 
   tasks:
-    - name: Add tower Credential for Azure 
-      tower_credential:
-        name: azure
-        kind: azure_rm
-        description: azure
-        organization: "Default"
-        state: present
-        subscription: "{{ subscription_id }}"
-        client: "{{ Client_id }}"
-        secret: "{{ Secret_key }}"
-        tenant: "{{ Tenant_id }}"
     - name: Create virtual network
       azure_rm_virtualnetwork:
         resource_group: "{{ RG }}"
