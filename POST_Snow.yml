@@ -16,16 +16,4 @@ tasks:
       resource_group: "{{ RG }}"
       name: testvn001
       address_prefixes: "10.10.0.0/16
-  - name: Create VM
-    azure_rm_virtualmachine:
-      resource_group: "{{ RG }}"
-      name: "{{ vm_name }}"
-      vm_size: "{{ size }}"
-      admin_username: "{{ admin_uname }}"
-      admin_password: "{{ admin_passwd }}"
-      image:
-        offer: CentOS
-        publisher: OpenLogic
-        sku: '7.1'
-        version: latest
 
