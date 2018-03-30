@@ -15,16 +15,26 @@
 
 
   tasks:
-
+    - name: Add tower Credential for Azure 
+      tower_credential:
+        name: azure
+        kind: azure_rm
+        description: azure
+        organization: "Default"
+        state: present
+        subscription_id: "{{ subscription_id }}"
+        client_id: "{{ Client_id }}"
+        secret: "{{ Secret_key }}"
+        tenant: "{{ Tenant_id }}"
     - name: Create virtual network
       azure_rm_virtualnetwork:
         resource_group: "{{ RG }}"
         name: testvn001
         address_prefixes: "10.10.0.0/16"
-        subscription_id: "{{ subscription_id }}"
-        client_id: "{{ Client_id }}"
-        secret: "{{ Secret_key }}"
-        tenant: "{{ Tenant_id }}"
+        #subscription_id: "{{ subscription_id }}"
+        #client_id: "{{ Client_id }}"
+        #secret: "{{ Secret_key }}"
+        #tenant: "{{ Tenant_id }}"
     - name: create virtual machine
       azure_rm_virtualmachine:
         resource_group: "{{ RG }}"
