@@ -20,12 +20,16 @@
         resource_group: "{{ RG }}"
         name: testvn001
         address_prefixes: "10.10.0.0/16"
-        #subscription_id: "{{ subscription_id }}"
-        #client_id: "{{ Client_id }}"
-        #secret: "{{ Secret_key }}"
-        #tenant: "{{ Tenant_id }}"
+        subscription_id: "{{ subscription_id }}"
+        client_id: "{{ Client_id }}"
+        secret: "{{ Secret_key }}"
+        tenant: "{{ Tenant_id }}"
     - name: create virtual machine
       azure_rm_virtualmachine:
+        subscription_id: "{{ subscription_id }}"
+        client_id: "{{ Client_id }}"
+        secret: "{{ Secret_key }}"
+        tenant: "{{ Tenant_id }}"
         resource_group: "{{ RG }}"
         name: "{{ vm_name }}"
         vm_size: "{{ size }}"
