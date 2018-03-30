@@ -8,12 +8,41 @@
     size: Standard_A1
     admin_uname: snow
     admin_passwd: snowteam18!
+    azure_client_id: 0e1af58d-fb21-442b-ac99-b5a070cc3e13
+    azure_subscription: e67e058e-9b7d-4256-b9d9-6cef549a2436
+    azure_tenant: 400b47ce-ffad-4d65-bdf3-1a2f5312e597
+    azure_secret: wOOx2fE0O6Gn5lKVtZsGytw8ojrBAlZNofkl5ZDaYos=
+    
 
 
   tasks:
+    - name: Add tower Credential for Azure 
+      tower_credential:
+      name: azure
+      kind: azure_rm
+      description: azure
+      organization: "Default"
+      state: present
+      client: " {{ azure_client_id }}"
+      subscription: " {{ azure_subscription }} "
+      tenant: " {{ azure_tenant }}"
+      secret: " {{ azure_secret }}"
+      tower_config_file: "~/.tower_cli.cfg"
 
     - name: Create virtual network
       azure_rm_virtualnetwork:
-        resource_group: RG-GS
+        resource_group: "{{ RG }}"
         name: testvn001
         address_prefixes: "10.10.0.0/16"
+    - name: create virtual machine
+      azure_rm_virtualmachine:
+        resource_group: "{{ RG }}"
+        name: "{{ vm_name }}"
+        vm_size: "{{ size }}"
+        admin_username: "{{ admin_uname }}"
+        admin_password: "{{ admin_passwd }}"
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.1'
+          version: latest
