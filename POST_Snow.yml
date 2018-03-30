@@ -1,9 +1,10 @@
----
+
+    
+    ---
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
   vars:
-    name_vm: "{{ the_name_vm }}"
     RG: myResourceGroup
     vm_name: TestOfficiel
     size: Standard_A1
@@ -11,25 +12,27 @@
     admin_passwd: snowDevoteam18!
     user_snow: denis
     passwd_snow: denis
-    
   tasks:
-    - name: Create VM
-      azure_rm_virtualmachine:
-        resource_group: "{{ RG }}"
-        name: '{{ the_name_vm }}'
-        vm_size: "{{ size }}"
-        admin_username: "{{ admin_uname }}"
-        admin_password: "{{ admin_passwd }}"
-        image:
-          offer: CentOS
-          publisher: OpenLogic
-          sku: '7.1'
-          version: latest
-     
-    
-    
-    
-    
+    - name: Posting to SNOW API
+      uri:
+        url: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post
+        user: "{{user_snow }}"
+        password: "{{user_snow }}"
+        method: POST
+        return_content: yes
+        headers:
+          Content-Type: application/json
+        body_format: json
+        body:
+          {"Manufacturer":"OpenLogic",
+           "Name":"{{ vm_name }}",
+           "Operating System":"CentOS"
+          }
+        #status_code: 201
+        validate_certs: no
+      register: snow_response
+    - debug:
+        var: snow_response
 
  
 
