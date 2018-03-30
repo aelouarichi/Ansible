@@ -22,8 +22,8 @@
         description: azure
         organization: "Default"
         state: present
-        subscription_id: "{{ subscription_id }}"
-        client_id: "{{ Client_id }}"
+        subscription: "{{ subscription_id }}"
+        client: "{{ Client_id }}"
         secret: "{{ Secret_key }}"
         tenant: "{{ Tenant_id }}"
     - name: Create virtual network
