@@ -4,25 +4,28 @@
   become_method: sudo
   vars:
     RG: myResourceGroup
-    vm_name: TestOfficiel
+    vm_name: Service Now
     size: Standard_A1
     admin_uname: snow
-    admin_passwd: snowDevoteam18!
-    user_snow: denis
-    passwd_snow: denis
-  tasks:
-    - name: CmdLine JSON - string
-      debug:
-       msg: "{{ my_string }}"
+    admin_passwd: snowteam18!
 
-    - name: CmdLine JSON - float
-      debug:
-       msg: "Passed float: {{ my_float }}; Subtracted from 1.0: {{ 1.0 - my_float }}"
 
-    - name: CmdLine JSON - list
-      debug:
-       msg: "{{ item }}"
-      with_items: "{{ my_list }}"
-
- 
+tasks:
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+      resource_group: "{{ RG }}"
+      name: testvn001
+      address_prefixes: "10.10.0.0/16
+  - name: Create VM
+    azure_rm_virtualmachine:
+      resource_group: "{{ RG }}"
+      name: "{{ vm_name }}"
+      vm_size: "{{ size }}"
+      admin_username: "{{ admin_uname }}"
+      admin_password: "{{ admin_passwd }}"
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.1'
+        version: latest
 
