@@ -1,4 +1,0 @@
----
-- name: Extra variable test
-    debug:
-     msg: "Test"
