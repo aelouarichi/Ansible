@@ -1,6 +1,4 @@
-
-    
-    ---
+---
 - hosts: vmlabsnowazuerh7
   become: yes
   become_method: sudo
