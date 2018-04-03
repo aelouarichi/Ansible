@@ -58,7 +58,7 @@
           Content-Type: application/json
         body_format: json
         body:
-          {"Manufacturer":"{{ Image_offer }}",
+          {"Manufacturer":"{{ Image_publisher }}",
            "Name":"{{ vm_name }}",
            "Operating System":"{{ Image_offer }}"
           }
