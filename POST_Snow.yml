@@ -13,11 +13,11 @@
   tasks:
     - name: CmdLine JSON - string
       debug:
-       msg: "{{ extra_vars.my_string }}"
+       msg: "{{ ignored_fields.extra_vars.my_string }}"
 
     - name: CmdLine JSON - float
       debug:
-       msg: "Passed float: {{ extra_vars.my_float }}; Subtracted from 1.0: {{ 1.0 - extra_vars.my_float }}"
+       msg: "Passed float: {{ ignored_fields.extra_vars.my_float }}; Subtracted from 1.0: {{ 1.0 - extra_vars.my_float }}"
 
     - name: CmdLine JSON - list
       debug:
