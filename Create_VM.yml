@@ -1,1 +1,39 @@
+---
+- hosts: vmlabsnowazuerh7
+  become: yes
+  become_method: sudo
+  vars:
+    RG: RG-UC1
+    vm_name: ServiceNow
+    size: Standard_A1
+    admin_uname: snow
+    admin_passwd: snowteam18!
+    
 
+
+  tasks:
+    - name: Create virtual network
+      azure_rm_virtualnetwork:
+        resource_group: "{{ RG }}"
+        name: testvn001
+        address_prefixes: "10.10.0.0/16"
+        subscription_id: "{{ subscription_id }}"
+        client_id: "{{ Client_id }}"
+        secret: "{{ Secret_key }}"
+        tenant: "{{ Tenant_id }}"
+    - name: create virtual machine
+      azure_rm_virtualmachine:
+        subscription_id: "{{ subscription_id }}"
+        client_id: "{{ Client_id }}"
+        secret: "{{ Secret_key }}"
+        tenant: "{{ Tenant_id }}"
+        resource_group: "{{ RG }}"
+        name: "{{ vm_name }}"
+        vm_size: "{{ size }}"
+        admin_username: "{{ admin_uname }}"
+        admin_password: "{{ admin_passwd }}"
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.1'
+          version: latest
