@@ -46,4 +46,26 @@
       register: output
     - debug:
        var: output   
+       
+    - name: Posting to SNOW API
+      uri:
+        url: "{{ url_snow }}"
+        user: "{{ user_snow }}"
+        password: "{{user_snow }}"
+        method: POST
+        return_content: yes
+        headers:
+          Content-Type: application/json
+        body_format: json
+        body:
+          {"Manufacturer":"{{ Image_offer }}",
+           "Name":"{{ vm_name }}",
+           "Operating System":"{{ Image_offer }}"
+          }
+        #status_code: 201
+        validate_certs: no
+      register: snow_response
+    - debug:
+        var: snow_response
+      when: output|success
       
