@@ -43,4 +43,7 @@
           publisher: "{{ Image_publisher }}"
           sku: '"{{ Image_sku }}"'
           version: latest
+      register: output
+    - debug:
+       var: output   
       
