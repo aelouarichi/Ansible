@@ -22,9 +22,9 @@
     - name: VM_size
       debug:
        msg: "{{ size }}"
-    - name: VM_size
+    - name: VM_Offer
       debug:
-       msg: "{{ size }}"
+       msg: "{{ offer }}"
        
     - name: Create virtual network
       azure_rm_virtualnetwork:
