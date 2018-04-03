@@ -16,6 +16,16 @@
 
 
   tasks:
+    - name: VM_name
+      debug:
+       msg: "{{ name }}"
+    - name: VM_size
+      debug:
+       msg: "{{ size }}"
+    - name: VM_size
+      debug:
+       msg: "{{ size }}"
+       
     - name: Create virtual network
       azure_rm_virtualnetwork:
         resource_group: "{{ RG }}"
