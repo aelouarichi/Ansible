@@ -13,7 +13,7 @@
   tasks:
     - name: CmdLine JSON - string
       debug:
-       msg: "{{ .my_string }}"
+       msg: "{{ my_string }}"
 
     - name: CmdLine JSON - float
       debug:
