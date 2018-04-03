@@ -18,13 +18,13 @@
   tasks:
     - name: VM_name
       debug:
-       msg: "{{ name }}"
+       msg: "{{ VM_name }}"
     - name: VM_size
       debug:
-       msg: "{{ size }}"
+       msg: "{{ VM_size }}"
     - name: VM_Offer
       debug:
-       msg: "{{ offer }}"
+       msg: "{{ Image_offer }}"
        
     - name: Create virtual network
       azure_rm_virtualnetwork:
@@ -43,12 +43,12 @@
         secret: "{{ Secret_key }}"
         tenant: "{{ Tenant_id }}"
         resource_group: "{{ RG }}"
-        name: "{{ name }}"
-        vm_size: "{{ size }}"
+        name: "{{ VM_name }}"
+        vm_size: "{{ VM_size }}"
         admin_username: "{{ admin_uname }}"
         admin_password: "{{ admin_passwd }}"
         image:
-          offer: "{{ offer }}"
-          publisher: "{{ publisher }}"
-          sku: '"{{ sku }}"'
+          offer: "{{ Image_offer }}"
+          publisher: "{{ Image_publisher }}"
+          sku: '"{{ Image_sku }}"'
           version: latest
