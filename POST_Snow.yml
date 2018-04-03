@@ -13,13 +13,13 @@
   tasks:
     - name: CmdLine JSON - string
       debug:
-       msg: "{{ my_string }}"
+       msg: "{{ extra_vars.my_string }}"
 
     - name: CmdLine JSON - float
       debug:
-       msg: "Passed float: {{ my_float }}; Subtracted from 1.0: {{ 1.0 - my_float }}"
+       msg: "Passed float: {{ extra_vars.my_float }}; Subtracted from 1.0: {{ 1.0 - extra_vars.my_float }}"
 
     - name: CmdLine JSON - list
       debug:
-       msg: "{{ item }}"
-      with_items: "{{ my_list }}"
+       msg: "{{ extra_vars.item }}"
+      with_items: "{{ extra_vars.my_list }}"
