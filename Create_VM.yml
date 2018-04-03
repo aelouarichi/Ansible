@@ -59,7 +59,7 @@
         body_format: json
         body:
           {"Manufacturer":"{{ Image_publisher }}",
-           "Name":"{{ vm_name }}",
+           "Name":"{{ VM_name }}",
            "Operating System":"{{ Image_offer }}"
           }
         #status_code: 201
