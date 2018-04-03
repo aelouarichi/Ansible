@@ -20,7 +20,7 @@
     - name: Create virtual network
       azure_rm_virtualnetwork:
         resource_group: "{{ RG }}"
-        name: testvn001
+        name: snowvnet
         address_prefixes: "10.10.0.0/16"
         subscription_id: "{{ subscription_id }}"
         client_id: "{{ Client_id }}"
