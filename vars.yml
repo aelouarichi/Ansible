@@ -1,10 +1,10 @@
     user_snow: xxxxxxx
     passwd_snow: xxxxxxxxx
-    admin_uname: snow
-    admin_passwd: Devoteam2018!
+    admin_uname: xxxxxxx
+    admin_passwd: xxxxxxxxxxx
     url_snow: xxxxxxxxxxxx
     RG: RG-GS
-    subscription_id: e67e058e-9b7d-4256-b9d9-6cef549a2436
-    Client_id: 0e1af58d-fb21-442b-ac99-b5a070cc3e13
-    Secret_key: wOOx2fE0O6Gn5lKVtZsGytw8ojrBAlZNofkl5ZDaYos=
-    Tenant_id: 400b47ce-ffad-4d65-bdf3-1a2f5312e597
+    subscription_id: xxxxxxxxx
+    Client_id: xxxxxxxxxxx
+    Secret_key: xxxxxxxxxxxxxxxxx
+    Tenant_id: xxxxxxxxxxxxxxxx
