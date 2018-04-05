@@ -20,7 +20,7 @@
        
     - name: Create virtual network
       local_action:
-        azure_rm_virtualnetwork:
+        module: azure_rm_virtualnetwork:
           resource_group: "{{ RG }}"
           name: snowvnet
           address_prefixes: "10.10.0.0/16"
@@ -31,7 +31,7 @@
         
     - name: create virtual machine
       local_action:
-        azure_rm_virtualmachine:
+        module: azure_rm_virtualmachine:
           subscription_id: "{{ subscription_id }}"
           client_id: "{{ Client_id }}"
           secret: "{{ Secret_key }}"
