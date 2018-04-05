@@ -1,7 +1,7 @@
 ---
-- hosts: vmlabsnowazuerh7
-  become: yes
-  become_method: sudo
+- hosts: localhost
+  connection : local
+  
  
   tasks:
     - name: Get playbook variables
