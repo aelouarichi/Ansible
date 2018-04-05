@@ -46,9 +46,9 @@
             publisher: "{{ Image_publisher }}"
             sku: "{{ Image_sku }}"
             version: latest
-        #register: output
-      #- debug:
-       #  var: output   
+      register: output
+    - debug:
+         var: output   
        
     - name: Posting to SNOW API
       local_action:
@@ -68,8 +68,8 @@
             }
           #status_code: 201
           validate_certs: no
-        register: snow_response
-      - debug:
-          var: snow_response
-        when: output|success
+      register: snow_response
+    - debug:
+        var: snow_response
+      when: output|success
       
