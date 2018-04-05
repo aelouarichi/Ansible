@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: "{{ VM_name }}"
   become: yes
   become_method: sudo
   
