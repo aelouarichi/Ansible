@@ -46,9 +46,9 @@
             publisher: "{{ Image_publisher }}"
             sku: "{{ Image_sku }}"
             version: latest
-        register: output
-      - debug:
-         var: output   
+        #register: output
+      #- debug:
+       #  var: output   
        
     - name: Posting to SNOW API
       local_action:
