@@ -2,8 +2,8 @@
 - hosts: localhost
   connection : local
   gather_facts: false
-  
- 
+
+
   tasks:
     - name: Get playbook variables
       include_vars:
@@ -17,7 +17,7 @@
     - name: VM_Offer
       debug:
        msg: "{{ Image_offer }}"
-       
+
     - name: Create virtual network
       local_action:
         module: azure_rm_virtualnetwork
@@ -28,7 +28,7 @@
         client_id: "{{ Client_id }}"
         secret: "{{ Secret_key }}"
         tenant: "{{ Tenant_id }}"
-        
+
     - name: create virtual machine
       local_action:
         module: azure_rm_virtualmachine
@@ -48,6 +48,27 @@
           version: latest
       register: output
     - debug:
-       var: output   
-       
-    
+       var: output
+
+    - name: Posting to SNOW API
+      uri:
+        url: "{{ url_snow }}"
+        user: "{{ user_snow }}"
+        password: "{{user_snow }}"
+        method: POST
+        return_content: yes
+        headers:
+          Content-Type: application/json
+        body_format: json
+        body:
+          {"Manufacturer":"{{ Image_publisher }}",
+           "Name":"{{ VM_name }}",
+           "Operating System":"{{ Image_offer }}"
+          }
+        #status_code: 201
+        validate_certs: no
+      register: snow_response
+    - debug:
+        var: snow_response
+      when: output|success
+                                   
