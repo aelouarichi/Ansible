@@ -1,10 +1,7 @@
-    admin_uname: xxxxx
-    admin_passwd: xxxxx
-    user_snow: xxxxx
-    passwd_snow: xxxxx
-    RG: xxxxx
-    url_snow: xxxxx
-    subscription_id: xxxxxxxxxxx
-    Client_id: xxxxxxxxxxxxx
-    Secret_key: xxxxxxxxxxxxxxxxxxxxxxxxx
-    Tenant_id: xxxxxxxxxxxxxxxxxxxx
+    admin_uname: snow
+    admin_passwd: Devoteam2018!
+    user_snow: denis
+    passwd_snow: denis
+    RG: RG-GS
+    url_snow: https://devoteamfrdev.service-now.com/api/devo2/ansible_get/Post
+   
