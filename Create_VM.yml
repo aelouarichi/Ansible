@@ -24,18 +24,18 @@
         resource_group: "{{ RG }}"
         name: snowvnet
         address_prefixes: "10.10.0.0/16"
-        subscription_id: "{{ subscription_id }}"
-        client_id: "{{ Client_id }}"
-        secret: "{{ Secret_key }}"
-        tenant: "{{ Tenant_id }}"
+        #subscription_id: "{{ subscription_id }}"
+        #client_id: "{{ Client_id }}"
+        #secret: "{{ Secret_key }}"
+        #tenant: "{{ Tenant_id }}"
 
     - name: create virtual machine
       local_action:
         module: azure_rm_virtualmachine
-        subscription_id: "{{ subscription_id }}"
-        client_id: "{{ Client_id }}"
-        secret: "{{ Secret_key }}"
-        tenant: "{{ Tenant_id }}"
+        #subscription_id: "{{ subscription_id }}"
+        #client_id: "{{ Client_id }}"
+        #secret: "{{ Secret_key }}"
+        #tenant: "{{ Tenant_id }}"
         resource_group: "{{ RG }}"
         name: "{{ VM_name }}"
         vm_size: "{{ VM_size }}"
@@ -51,7 +51,8 @@
        var: output
 
     - name: Posting to SNOW API
-      uri:
+      local_action:
+        module: uri
         url: "{{ url_snow }}"
         user: "{{ user_snow }}"
         password: "{{user_snow }}"
