@@ -42,8 +42,28 @@
       register: output
     - debug:
        var: output
-   vars: 
-     IP_adress: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces[0].properties.ipConfigurations[0].properties.publicIPAddress.properties.ipAddress    
+       var: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces[0].properties.ipConfigurations[0].properties.publicIPAddress.properties.ipAddress 
+       
+    - name: Posting to SNOW API
+      local_action:
+        module: uri
+        url: "{{ url_snow }}"
+        user: "{{ user_snow }}"
+        password: "{{user_snow }}"
+        method: POST
+        return_content: yes
+        headers:
+          Content-Type: application/json
+        body_format: json
+        body:
+          {"IP_adress":"{{ output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces[0].properties.ipConfigurations[0].properties.publicIPAddress.properties.ipAddress }}",
+          }
+        #status_code: 201
+        validate_certs: no
+      register: snow_response
+    - debug:
+        var: snow_response
+      when: output|success
 
    
                                                                                                     
