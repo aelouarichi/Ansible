@@ -42,7 +42,7 @@
       register: output
     - debug:
        var: output
-       var: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces[0].properties.ipConfigurations[0]
+       var: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces[0].properties.ipConfigurations[0].properties.publicIPAddress
 
    
                                                                                                     
